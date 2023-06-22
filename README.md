@@ -22,3 +22,25 @@
    - don't worry about GPU driver, it can be setup later
 7. Under `Firewall` section tick `Allow http` and `Allow https` checkboxes
    - exposed ports can be easily adjusted later
+
+Please note that sometimes GCP is not able to allocate requested resources and launch your instance, see possible options below:
+- wait 3-5m and try create / launch instance again
+- change configuration, quite often more expensive GPU or machine type is available
+- recreate your configuration in another location
+- update region / zone if you're experienced enough and know what you do
+
+## Stable Diffusion setup
+Finally, you have VM up and running. It's high time to finalize the setup and get Stable Diffusion aboard
+1. Navigate to `Virtual Machines - VM instances` and hit `SSH` button in the `Connect` column
+2. Allow current user to manage GCP console, asked automatically
+3. Setup GPU driver following [the next guide](https://cloud.google.com/compute/docs/gpus/install-drivers-gpu)
+   - Run the next command `curl https://raw.githubusercontent.com/GoogleCloudPlatform/compute-gpu-installation/main/linux/install_gpu_driver.py --output install_gpu_driver.py`
+   - Run the next command `sudo python3 install_gpu_driver.py`
+   - Verify setup running `sudo nvidia-smi`
+4. Now lets continue with Stable Diffusion setup, see more details on [preconditions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies) and [install guide](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
+  - As it was mentioned before, SD works fine with `Python 3.9.2` thus upgrade to `Python 3.10.6` can be skipped
+  - Run the next command `sudo apt install wget git python3 python3-venv`
+  - Clone Stable Diffusion on your machine by running `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`
+  - 
+
+## DreamBooth setup
