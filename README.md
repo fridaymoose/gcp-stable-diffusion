@@ -38,9 +38,11 @@ Finally, you have VM up and running. It's high time to finalize the setup and ge
    - Run the next command `sudo python3 install_gpu_driver.py`
    - Verify setup running `sudo nvidia-smi`
 4. Now lets continue with Stable Diffusion setup, see more details on [preconditions](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Dependencies) and [install guide](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Install-and-Run-on-NVidia-GPUs)
-  - As it was mentioned before, SD works fine with `Python 3.9.2` thus upgrade to `Python 3.10.6` can be skipped
-  - Run the next command `sudo apt install wget git python3 python3-venv`
-  - Clone Stable Diffusion on your machine by running `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`
-  - 
+   - As it was mentioned before, SD works fine with `Python 3.9.2` thus upgrade to `Python 3.10.6` can be skipped
+   - Run the next command `sudo apt install wget git python3 python3-venv`
+   - Clone Stable Diffusion on your machine by running `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`
+
+TBD
 
 ## DreamBooth setup
+TBD
