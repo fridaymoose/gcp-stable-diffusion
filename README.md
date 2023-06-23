@@ -41,8 +41,25 @@ Finally, you have VM up and running. It's high time to finalize the setup and ge
    - As it was mentioned before, SD works fine with `Python 3.9.2` thus upgrade to `Python 3.10.6` can be skipped
    - Run the next command `sudo apt install wget git python3 python3-venv`
    - Clone Stable Diffusion on your machine by running `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`
+5. Navigate to `stable-diffusion-webui` folder and tune configuration inside `webui-user.sh` file
+```
+cd stable-diffusion-webui
+vim webui-user.sh
+# use Insert to enter modification mode
+# update next section
+# export COMMANDLINE_ARGS="--listen --gradio-auth username:password --port 8080 --enable-insecure-extension-access"
+# use Esp to enter command mode
+# :wq
+```
+6. Expose the same port under `VPC Network - Firewall` opening TCP connection
+7. Run Stable Diffusion with next comamnd `./webui.sh`
 
-TBD
+## Stable Diffusion setup troubleshooting
+> libXext.so.6: cannot open shared object file: No such file or directory
+To fix it, you can simply install missed dependency
+```
+sudo apt install libxext6
+```
 
 ## DreamBooth setup
 TBD
