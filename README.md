@@ -55,11 +55,31 @@ vim webui-user.sh
 7. Run Stable Diffusion with next comamnd `./webui.sh`
 
 ## Stable Diffusion setup troubleshooting
+1. Missed library
 > libXext.so.6: cannot open shared object file: No such file or directory
+
 To fix it, you can simply install missed dependency
 ```
 sudo apt install libxext6
 ```
 
+2. Extensions are disabled
+> AssertionError: extension access disabed because of commandline flags
+
+Ensure that parameter `--enable-insecure-extension-access` was added into `webui-user.sh` file
+
 ## DreamBooth setup
-TBD
+1. Login into Stable Diffusion
+2. Open `Extensions` tab
+3. Find `sd_dreambooth_extension`, you can search for `dreambooth` with Ctrl+F
+4. Hit `Install` button
+5. Restart Stable Diffusion, seems `Apply and restart UI` can't apply it on the fly
+   
+## DreamBooth setup troubleshooting
+1. Dreambooth loading error
+> NameError: name 'DreamboothConfig' is not defined
+
+Navigate to root folder `stable-diffusion-webui` and run next command
+```
+pip install -r extensions/sd_dreambooth_extension/requirements.txt
+```
